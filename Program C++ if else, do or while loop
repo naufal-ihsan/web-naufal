@@ -1,0 +1,92 @@
+#include <iostream>
+using namespace std;
+
+int main (){
+    int pilihan, jumlah_barang, harga, total, diskon, bayar;
+    string item;
+
+    cout << "DISTRO CINA JAWA" << endl;
+    cout << "----------------" << endl;
+    cout << "DAFTAR KATALOG" << "\n" << endl;
+    cout << "1. kemeja : Rp. 120.000 |" << " 4. celana panjang : Rp. 200.000            " << endl;
+    cout << "2. kaos   : Rp. 80.000  |" << " 5. celana pendek  : Rp. 100.000            " << endl;
+    cout << "3. jaket  : Rp. 300.000 |" << " 6. sepatu         : Rp. 400.000 (sold out) " << endl;
+    cout << "3. topi   : Rp. 50.000  |" << " 7. selesai" << endl;
+    cout << "--------------------------------------------------------------------" << endl;
+
+    do{
+        cout << "Masukkan Pilihan : ";
+        cin >> pilihan;
+
+        switch(pilihan){
+        case 1 :
+            item = "kemeja";
+            harga = 120000;
+            cout << "jumlah barang : ";
+            cin >> jumlah_barang;
+            total += harga * jumlah_barang;
+            cout << jumlah_barang << " " << item << " = Rp. " << harga * jumlah_barang << endl << endl;
+            break;
+        case 2 :
+            item = "kaos";
+            harga = 80000;
+            cout << "jumlah barang : ";
+            cin >> jumlah_barang;
+            total += harga * jumlah_barang;
+            cout << jumlah_barang << " " << item << " = Rp. " << harga * jumlah_barang << endl << endl;
+            break;
+        case 3 :
+            item = "jaket";
+            harga = 300000;
+            cout << "jumlah barang : ";
+            cin >> jumlah_barang;
+            total += harga * jumlah_barang;
+            cout << jumlah_barang << " " << item << " = Rp. " << harga * jumlah_barang << endl << endl;
+            break;
+        case 4 :
+            item = "celana panjang";
+            harga = 200000;
+            cout << "jumlah barang : ";
+            cin >> jumlah_barang;
+            total += harga * jumlah_barang;
+            cout << jumlah_barang << " " << item << " = Rp. " << harga * jumlah_barang << endl << endl;
+            break;
+        case 5 :
+            item = "celana pendek";
+            harga = 100000;
+            cout << "jumlah barang : ";
+            cin >> jumlah_barang;
+            total += harga * jumlah_barang;
+            cout << jumlah_barang << " " << item << " = Rp. " << harga * jumlah_barang << endl << endl;
+            break;
+        case 6 :
+            cout << "maaf kak sudah sold out" << endl << endl;
+            break;
+        case 7 :
+            cout << "\n\n";
+            cout << "Total Belanja : " << "Rp. " << total << endl;
+
+            if(total >= 600000){
+                diskon = 0.06 * total;
+            } else if(total >= 550000){
+                diskon = 0.04 * total;
+            } else if(total <= 500000){
+                diskon = 0.02 * total;
+            } else {
+                diskon = 0;
+            }
+            cout << "Diskon        : " << "Rp. " << diskon << endl;
+            cout << "Total Belanja : " << "Rp. " << total - diskon << endl;
+            cout << "Bayar         : " << "Rp. ";
+            cin >> bayar;
+            cout << "Kembali       : " << "Rp. " << (bayar - (total-diskon)) << endl << endl;
+            break;
+        default :
+            cout << "HARUS BELI!!" << endl << endl;
+            break;
+        }
+    } while(pilihan != 6);
+    cout << "Terima Kasih" << endl;
+
+    return 0;
+}
