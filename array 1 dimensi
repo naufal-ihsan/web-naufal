@@ -1,0 +1,19 @@
+#include<iostream>
+#include<conio.h>
+
+using namespace std;
+
+int main(){
+	string absen [4][2]={{"Ani"},{"Sia"},{"Diku"},{"Fifa"}};
+
+	cout << "Mahasiswa yang hadir hari ini : \n" << endl;
+
+	for(int a=0;a<4;a++){
+		for (int b=0;b<2; b++){
+			cout<< "\t  " <<absen [a][b]<<" ";
+
+		}
+		cout<<endl;
+	}
+getch();
+}
